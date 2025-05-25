@@ -1,14 +1,20 @@
-import { useState } from 'react'
 import './App.css'
+import Footer from './components/Footer'
+import LandingPage from './components/LandingPage'
+import AboutPage from './components/AboutPage'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Navbar from './components/NavBar'
 
 function App() {
-
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+    <Router>
+    <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   )
 }
 
